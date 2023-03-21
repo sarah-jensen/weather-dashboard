@@ -1,0 +1,59 @@
+
+/* :root {
+    --color-primary: 255 115 179;
+    --color-secondary: 111 114 185;
+    /* ... */
+
+
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+.main {
+    display: flex;
+}
+
+#results {
+    display: block;
+}
+header {
+    background-color: rgb(4, 73, 107);
+    color: rgb(203, 167, 74);
+    justify-content: center;
+}
+
+.search-box {
+    display: block;
+    width: 30%;
+    align-content: left;
+    font-size: 5%;
+    background-color: rgb(10, 153, 134);
+}
+
+#city-name {
+    justify-content: center;
+    display: block;
+    width: 85%;
+    height: 5%;
+    font-size: 2%;
+    padding-left: 2%;
+}
+
+#search-button {
+    background-color: aquamarine;
+    height: 10%;
+    width: 50%;
+    font-size: 2%;
+    align-content: center;
+}
+
+#current-weather {
+    display: inline;
+    height: 30%;
+    background-color: brown;
+}
+
+#forecast {
+    background-color: azure;
+    height: 50%;
+}
