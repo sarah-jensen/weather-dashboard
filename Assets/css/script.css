@@ -17,16 +17,17 @@ body {
     display: block;
 }
 header {
-    background-color: rgb(4, 73, 107);
-    color: rgb(203, 167, 74);
+    background-color: rgb(4, 79, 71);
+    color: rgb(221, 215, 199);
     justify-content: center;
 }
 
 .search-box {
-    display: block;
-    width: 30%;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
     align-content: left;
-    font-size: 5%;
+    font-size: 15%;
     background-color: rgb(10, 153, 134);
 }
 
@@ -34,8 +35,8 @@ header {
     justify-content: center;
     display: block;
     width: 85%;
-    height: 5%;
-    font-size: 2%;
+    height: 10%;
+    font-size: 15%;
     padding-left: 2%;
 }
 
@@ -43,17 +44,19 @@ header {
     background-color: aquamarine;
     height: 10%;
     width: 50%;
-    font-size: 2%;
+    font-size: 15%;
     align-content: center;
 }
 
 #current-weather {
     display: inline;
     height: 30%;
+    width: 70%;
     background-color: brown;
 }
 
 #forecast {
     background-color: azure;
     height: 50%;
+    display: flex;
 }
