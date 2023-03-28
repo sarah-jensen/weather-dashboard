@@ -24,6 +24,12 @@ function getWeather(cityName) {
     });
 }
 
+function showWeather() {
+  $("#search-box").attr("display", none);
+  $("#current-weather").attr("display", flex);
+  $("#forecast").attr()
+}
+
 function getForecast(lat, lon) {
   let requestUrl =
     "https://api.openweathermap.org/data/2.5/forecast?lat=" +
@@ -63,7 +69,7 @@ function showCurrentWeather(data) {
   $("#current-weather").append(humidEl);
   console.log(data.list);
 
-// for loop to generate 5-day forecast
+  // for loop to generate 5-day forecast
   for (let index = 7; index <= 40; index += 7) {
     let forecast = data.list[index];
     console.log(forecast);
