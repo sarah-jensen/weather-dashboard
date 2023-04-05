@@ -19,29 +19,29 @@
     </header>
 
     <main>
+      <section class="search-history">
       <section class="search-box">
         Search for a City:
         <input type="text" id="city-name" placeholder="City, State" />
-        <button id="search-button">Search</button>
-        <section class="search-history"></section>
+        <section id="button-box">
+          <button id="search-button">Search</button>
+          <button id="clear-button">Clear</button>
+        </section>
+        <section class="history"></section>
       </section>
+    </section>
+
+      <!-- <div id="sun-gif">
+        <iframe src="https://giphy.com/embed/nYiHd4Mh3w6fS"></iframe><p><a href="https://giphy.com/gifs/sunshine-nYiHd4Mh3w6fS">via GIPHY</a></p>
+      </div> -->
 
       <section class="results">
-        <article>
-          <div id="current-weather">
-            <h1>Current Weather</h1>
-          </div>
-        </article>
+        <article id="current-weather"></article>
 
-        <article>
-          <div id="forecast">
-            <h2>5-Day Forecast:</h2>
-          </div>
-        </article>
+        <article id="forecast"></article>
       </section>
     </main>
 
     <script src="./Assets/js/script.js"></script>
-    
   </body>
 </html>

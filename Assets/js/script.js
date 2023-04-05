@@ -1,14 +1,25 @@
+
+let searchHistory = JSON.parse(localStorage.getItem('searchHistory') || '[]');
+
+
 $("#search-button").on("click", function () {
-  let cityName = $("#city-name").val();
+  const cityName = $("#city-name").val();
   getWeather(cityName);
+  localStorage.setItem(cityName);
+  $(".search-city=current").html("Current Weather: " + $(cityName))
 });
+
+// write city name to ".results h1"
+
 //write function to check Storage to load anything in local storage
 //write function to createCityButton for cities in local storage and after searching
 
 //write function to clear history
 
 function getWeather(cityName) {
-  let requestUrl =
+  // $("#sun-gif").attr("display", "none");
+  // $("#results").attr("display", "flex");
+     let requestUrl =
     "https://api.openweathermap.org/geo/1.0/direct?q=" +
     cityName +
     "&limit=1&appid=7af7e291bb513f26d14b0b266e6e8742";
@@ -24,11 +35,6 @@ function getWeather(cityName) {
     });
 }
 
-function showWeather() {
-  $("#search-box").attr("display", none);
-  $("#current-weather").attr("display", flex);
-  $("#forecast").attr()
-}
 
 function getForecast(lat, lon) {
   let requestUrl =
@@ -44,10 +50,14 @@ function getForecast(lat, lon) {
     .then(function (data) {
       console.log(data);
       showCurrentWeather(data);
+      showFiveDayForecast(data);
     });
 }
 
 function showCurrentWeather(data) {
+  const header = $("<h1>").text("Current Weather");
+  $("#current-weather").append(header);
+
   let city = data.city.name;
   let date = data.list[0].dt_txt;
   let iconData = data.list[0].weather[0].icon;
@@ -68,14 +78,22 @@ function showCurrentWeather(data) {
   let humidEl = $("<p>").text(`Humidity: ${humid} %`);
   $("#current-weather").append(humidEl);
   console.log(data.list);
+}
+
+  function showFiveDayForecast(data) {
+  const fiveDay = $("<h1>").text("5-Day Forecast");
+  $("#forecast").prepend(fiveDay);
+
+
 
   // for loop to generate 5-day forecast
-  for (let index = 7; index <= 40; index += 7) {
+  for (let index = 0; index <= 40; index += 8) {
+    
     let forecast = data.list[index];
     console.log(forecast);
     let date = forecast.dt_txt;
     console.log(date);
-    let dateEl = $("<p>").text(`${date}`);
+    let dateEl = $("<h2>").text(`${date}`);
     $("#forecast").append(dateEl);
     let iconData = forecast.weather[0].icon;
     let iconUrl = "https://openweathermap.org/img/wn/" + iconData + "@2x.png";
@@ -91,5 +109,8 @@ function showCurrentWeather(data) {
     let humid = forecast.main.humidity;
     let humidEl = $("<p>").text(`Humidity: ${humid} %`);
     $("#forecast").append(humidEl);
+    // generateDayCard()
   }
 }
+
+

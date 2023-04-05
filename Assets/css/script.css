@@ -3,7 +3,6 @@
     --color-secondary: 111 114 185;
     /* ... */
 
-
 body {
   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
   background-image: url(../image/weather-background.jpg);
@@ -17,64 +16,128 @@ body {
 
 header {
   color: rgb(221, 215, 199);
-  justify-content: center;
+  font-size: xx-large;
 }
-main {
 
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.search-history {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .search-box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: auto;
-  margin-top: 30%;
-  width: 50%;
-  height: 20em;
-  border-radius: 5%;
-  border-style: solid;
-  border-width: 2px;
-  border: rgb(10, 153, 134);
+  margin: 2% 0 0 5%;
+  width: fit-content;
   align-content: center;
-  font-size: 15%;
-
+  font-size: medium;
 }
 
 #city-name {
   display: block;
   width: 60%;
-  height: 10%;
-  font-size: 15%;
+  height: fit-content;
+  font-size: medium;
   padding-left: 2%;
+  border-radius: 1em;
+  margin-bottom: 1%;
 }
 
-#search-button {
-  
+button {
   background-color: aquamarine;
-  height: 10;
-  width: 30%;
-  font-size: 15%;
+  height: 20%;
+  width: fit-content;
+  height: fit-content;
+  font-size: small;
   align-content: center;
+  border-radius: 1em;
 }
+
+.history {
+  display: none;
+  background-color:rgb(,221 215, 199);
+  font-size: small;
+  height: fit-content;
+}
+/* #sun-gif {
+  width: 100%;
+  margin-top: 5%;
+  justify-content: space-around;
+  height:0;
+  padding-bottom:75%;
+  align-self: center;
+} */
 
 .results {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
+#current-weather h1 {
+  background-color: rgb(220, 152, 16);
+  color: rgb(122, 54, 5);
+  font-weight: bold;
+  justify-self: center;
+  width: 100%;
+  border-radius: 0.25em 0.25em 0 0;
+}
+
+#current-weather img {
+  width: 20%;
+}
 
 #current-weather {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  display: flex;
+  border-radius: 0.25em;
+  margin-top: 5%;
   background-color: rgb(222, 150, 150);
-  width: 60%;
-  display: none;
+}
+
+#forecast h1 {
+  background-color: rgb(220, 152, 16);
+  color: rgb(122, 54, 5);
+  font-weight: bold;
+  justify-self: center;
+  width: 100%;
+  border-radius: 00.25em 0.25em 0 0;
+}
+
+#forecast img {
+  width: 20%;
 }
 
 #forecast {
-  background-color: rgb(123, 230, 230);
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 60%;
-  display: none;
+  flex-direction: column;
+  width: 80%;
+  display: flex;
+  border-radius: 0.25em;
+  margin-top: 5%;
+  background-color: rgb(123, 230, 230);
+  color: rgb(121, 90, 7);
+}
+
+.results h2 {
+  background-color: rgb(36, 134, 134);
+  color: rgb(221, 215, 199);
+}
+
+.day-card {
+  background-color: rgb(123, 230, 230);
+  color: rgb(121, 90, 7);
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
 }
